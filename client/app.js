@@ -185,7 +185,6 @@ function startClient() {
       "\t 2 To adjust the meeting room light settings\n" +
       "\t 3 To adjust the meeting room temperature settings\n" +
       "\t 4 For Temperature Streaming Features\n" +
-      "\t 5 To stream temperature readings\n" +
       "\t q To quit\n");
 
     if(action.toLowerCase() === 'q') {
