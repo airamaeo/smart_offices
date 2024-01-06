@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package temperature;
+
+service TemperatureControl {
+  rpc SetTemperature (TemperatureRequest) returns (TemperatureResponse); // Unary RPC
+  rpc GetCurrentTemperature (Empty) returns (TemperatureResponse);
+  rpc StreamTemperatures (RoomRequest) returns (stream TemperatureResponse); // Server streaming RPC
+  rpc StreamTemperatureReadings (stream TemperatureRequest) returns (TemperatureResponse); // Client streaming RPC
+}
+
+message TemperatureRequest {
+  float temperature = 1;
+  string room_id = 2;  // Add room_id for identification
+}
+
+message TemperatureResponse {
+  float currentTemperature = 1;
+  bool success = 2;
+}
+
+message RoomRequest {
+  string room_id = 1;
+}
+
+message Empty {}
