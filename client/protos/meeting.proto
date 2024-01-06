@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package meeting;
+
+service MeetingRoomControl {
+  rpc CheckAvailability (AvailabilityRequest) returns (AvailabilityResponse);
+  rpc BidirectionalStream (stream BidirectionalRequest) returns (stream BidirectionalResponse);
+}
+
+message AvailabilityRequest {
+  string room_id = 1;
+  string date = 2;
+  string start_time = 3;
+  string end_time = 4;
+}
+
+message AvailabilityResponse {
+  bool available = 1;
+  string message = 2;
+}
+
+message BidirectionalRequest {
+  string room_id = 1;
+  string message = 2;
+}
+
+message BidirectionalResponse {
+  string room_id = 1;
+  string message = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package lights;
+
+service LightControl {
+  rpc TurnOnOff (LightRequest) returns (LightResponse);
+  rpc AdjustBrightness (BrightnessRequest) returns (LightResponse);
+//  rpc BidirectionalStream (stream LightRequest) returns (stream LightResponse); // Bi-directional streaming RPC
+}
+
+message LightRequest {
+  bool on = 1;
+}
+
+message BrightnessRequest {
+  float brightness = 1;
+}
+
+message LightResponse {
+  bool success = 1;
+}

@@ -1,0 +1,41 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Controller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+    <!-- Include the client-side JavaScript -->
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <h2>Service Controller</h2>
+
+    <button onclick="checkAndBookRoomAvailability()">Check and Book Room Availability</button>
+    <button onclick="toggleLights()">Toggle Lights</button>
+    <button onclick="adjustBrightness()">Adjust Brightness</button>
+    <button onclick="performBidirectionalStreamingWithLights()">Perform Bidirectional Streaming with Lights</button>
+    <button onclick="startClient()">Set Temperature</button>
+    <button onclick="streamTemperatures()">Stream Temperatures</button>
+    <button onclick="streamTemperatureReadings()">Stream Temperature Readings</button>
+
+    <div id="output"></div>
+
+</body>
+</html>
